@@ -6,13 +6,9 @@ langchain-core==0.2.26
 langchain-cohere==0.1.8
 langchainhub==0.1.14
 # https://www.datacamp.com/tutorial/langgraph-tutorial
-langgraph==0.1.19
-langsmith==0.1.96
+langsmith==0.1.93
 fastembed==0.3.0
 groq==0.9.0
 rank-bm25==0.2.2
 chromadb==0.5.5
-qdrant-client==1.1.1
-scikit-learn==1.5.1
-umap==0.1.1
-unstructured
+gradio
