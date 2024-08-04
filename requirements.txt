@@ -5,6 +5,7 @@ langchain-openai==0.1.20
 langchain-core==0.2.26
 langchain-cohere==0.1.8
 langchainhub==0.1.14
+langchain-experimental==0.0.64
 # https://www.datacamp.com/tutorial/langgraph-tutorial
 langsmith==0.1.93
 fastembed==0.3.0
