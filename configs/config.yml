@@ -46,5 +46,5 @@ product:
     22: "thiet_bi_webcam",
     23: "thiet_bi_wifi",
     0: "LLM",
-    -1: "products"
+    -1: "product_csv"
 }
