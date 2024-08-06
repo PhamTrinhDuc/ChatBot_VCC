@@ -107,27 +107,12 @@ Nếu phần thông tin không liên quan thì không dùng.
 """
 
 PROMPT_HISTORY = """
-NHIỆM VỤ: Phân tích lịch sử trò chuyện, đặt lại câu hỏi của người dùng
-HƯỚNG DẪN CHI TIẾT:
-    1. Phân tích lịch sử trò chuyện:
-        • Đọc kỹ thông tin lịch sử cuộc trò chuyện gần đây nhất được cung cấp.
-        • Xác định các chủ đề chính, từ khóa quan trọng và bối cảnh của cuộc trò chuyện.
-    2. Xử lý câu hỏi tiếp theo:
-        • Đọc câu hỏi tiếp theo được đưa ra.
-        • Đánh giá mức độ liên quan của câu hỏi với lịch sử trò chuyện.
-    3. Đặt lại câu hỏi:
-        • Nếu câu hỏi có liên quan đến lịch sử: Đặt lại câu hỏi dựa trên bối cảnh và thông tin từ lịch sử trò chuyện. Làm rõ và cụ thể hóa câu hỏi nếu cần.
-        • Nếu câu hỏi không liên quan đến lịch sử: Giữ nguyên câu hỏi hoặc chỉnh sửa nhẹ để làm rõ ý.
-    4. Định dạng câu trả lời:
-        • Sử dụng tiếng Việt cho toàn bộ câu trả lời.
-        • Cấu trúc câu trả lời là 1 dictionary có: 
-            key: rewrite
-            value: Câu hỏi sau khi được chỉnh sửa hoặc làm rõ
+NHIỆM VỤ: Phân tích lịch sử trò chuyện kết hợp với câu hỏi của người dùng viết lại 1 câu hỏi mới hoàn chỉnh hơn.
+MỤC TIÊU: câu hỏi viết lại cần ngắn gọn, không lan man rườm rà và tập trung chính vào sản phẩm.
 
 LƯU Ý QUAN TRỌNG:
     • Luôn ưu tiên độ chính xác của thông tin, câu hỏi viết lại ngắn gọn.
-    • Giữ giọng điệu lịch sự, chuyên nghiệp và hữu ích trong suốt quá trình trã lời.
-    • Câu trả lời đúng định dạng
+    • Chỉ cần đưa ra câu viết hỏi được viết lại.
 
     ===================
     Lịch sử cuộc trò chuyện:
@@ -176,6 +161,9 @@ PROMPT_CLF_PRODUCT = '''
 
         input: Trời đẹp quá
         output: 0
+
+        input: Điều hòa nào tốt nhất cho phòng 30m2 có chức năng lọc không khí?
+        output: 6
         
     input: {query}
     output: 
