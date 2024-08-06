@@ -18,8 +18,9 @@ dotenv.load_dotenv()
 
 def get_tool(query: str):
     prompt = PROMPT_CLF_PRODUCT.format(query=query)
-    llm = APP_CONFIG.load_chatchit_model()
+    llm = APP_CONFIG.load_openai_model()
     output = llm.invoke(prompt).content
+    # print(output)
     pattern = r'-?\d+(?:\.\d+)?'
     numbers = re.findall(pattern, output)
     return [int(num) for num in numbers]
@@ -66,6 +67,8 @@ def get_context(query: str):
     """
 
     number = np.unique(get_tool(query=query))
+
+    print(number)
     # print(number)
     # print(APP_CONFIG.id_2_name[number[0]])
 
@@ -79,11 +82,6 @@ def get_context(query: str):
         data_chunked, db = create_sub_db(vector_db_name)
 
     retriever = init_retriever(vector_db=db, data_chunked=data_chunked)
-    print(retriever)
     contents = retriever.invoke(input=query)
 
-    final_content = ""
-    for content in contents:
-        if content.metadata['relevance_score'] > 0.7:
-            final_content = final_content + content.page_content + "\n\n"
-    return final_content
+    return contents
