@@ -1,0 +1,37 @@
+PRODUCT_INFO_ID,GROUP_PRODUCT_ID,GROUP_PRODUCT_NAME,PRODUCT_CODE,NON_VAT_PRICE_1,VAT_PRICE_1,COMMISSION_1,THRESHOLD_1,NON_VAT_PRICE_2,VAT_PRICE_2,COMMISSION_2,THRESHOLD_2,NON_VAT_PRICE_3,VAT_PRICE_3,PRODUCT_NAME,SPECIFICATION_BACKUP,RAW_PRICE,QUANTITY_SOLD,POWER,WEIGHT,VOLUME
+628018,"Công tắc, ổ cắm thông minh","công tắc, ổ cắm thông minh , công tắc cảm ứng 1 nút chữ nhật - 2 dây màu trắng",SMCTC000044,0,0,0,0,0,0,0,0,0,0,Công tắc cảm ứng 1 nút chữ nhật - 2 dây màu trắng,"THÔNG SỐ KỸ THUẬT 
+    • Điện áp hoạt động: 100-250V / 50-60Hz 
+    • Nhiệt độ hoạt động: 0oC ~ 65oC 
+    • Công suất chịu tải tối đa: ≤ 700 W/Line 
+    • Chuẩn kết nối Zigbee 
+    • Khoảng cách điều khiển tối đa: 15-20m (tùy thuộc địa hình lắp đặt)
+giá: 1063000",1063000,12,700,0.0,0.0
+628019,"Công tắc, ổ cắm thông minh","công tắc, ổ cắm thông minh , công tắc cảm ứng 2 nút chữ nhật - 2 dây màu trắng",SMCTC000045,0,0,0,0,0,0,0,0,0,0,Công tắc cảm ứng 2 nút chữ nhật - 2 dây màu trắng,"THÔNG SỐ KỸ THUẬT 
+    • Điện áp hoạt động: 100-250V / 50-60Hz 
+    • Nhiệt độ hoạt động: 0oC ~ 65oC 
+    • Công suất chịu tải tối đa: ≤ 700 W/Line 
+    • Chuẩn kết nối: Zigbee 
+    • Khoảng cách điều khiển tối đa: 15-20m (tùy thuộc địa hình lắp đặt)
+giá: 1106000",1106000,8,700,0.0,0.0
+628020,"Công tắc, ổ cắm thông minh","công tắc, ổ cắm thông minh , công tắc cảm ứng 3 nút chữ nhật - 2 dây màu trắng",SMCTC000046,0,0,0,0,0,0,0,0,0,0,Công tắc cảm ứng 3 nút chữ nhật - 2 dây màu trắng,"THÔNG SỐ KỸ THUẬT 
+    • Điện áp hoạt động: 100-250V / 50-60Hz 
+    • Nhiệt độ hoạt động: 0oC ~ 65oC 
+    • Công suất chịu tải tối đa: ≤ 700 W/Line 
+    • Chuẩn kết nối: Zigbee 
+    • Khoảng cách điều khiển tối đa: 15-20m (tùy thuộc địa hình lắp đặt)
+giá: 1169000",1169000,12,700,0.0,0.0
+628021,"Công tắc, ổ cắm thông minh","công tắc, ổ cắm thông minh , công tắc cảm ứng 4 nút chữ nhật - 2 dây màu trắng",SMCTC000047,0,0,0,0,0,0,0,0,0,0,Công tắc cảm ứng 4 nút chữ nhật - 2 dây màu trắng,"THÔNG SỐ KỸ THUẬT 
+    • Điện áp hoạt động: 100-250V / 50-60Hz 
+    • Nhiệt độ hoạt động: 0oC ~ 65oC 
+    • Công suất chịu tải tối đa: ≤ 700 W/Line 
+    • Chuẩn kết nối : Zigbee 
+    • Khoảng cách điều khiển tối đa : 15-20m (tùy thuộc địa hình lắp đặt)
+giá: 1254000",1254000,8,700,0.0,0.0
+628014,"Công tắc, ổ cắm thông minh","công tắc, ổ cắm thông minh , bộ điều khiển trung tâm home controller (hc)",SMBDK000011,0,0,0,0,0,0,0,0,0,0,Bộ điều khiển trung tâm Home Controller (HC),"THÔNG SỐ KỸ THUẬT 
+Điện áp hoạt động: 12VDC – 0.5A 
+Nhiệt độ hoạt động: 0oC ~ 50oC 
+Độ ẩm hoạt động: 0 – 95% 
+Chuẩn kết nối: Zigbee 
+Kích thước (DxRxC): 120 x 80 x 24 mm 
+Bảo hành: 24 tháng
+giá: 2277000",2277000,6,0,0.0,0.0
