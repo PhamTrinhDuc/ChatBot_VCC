@@ -3,32 +3,9 @@ from configs.load_config import LoadConfig
 from source.chat import chat_with_history
 APP_CFG = LoadConfig()
 
-
-# def chat_response(message, history):
-
-#     guidedRoute = semanticRouter.guide(message)
-#     print(guidedRoute)
-
-#     if guidedRoute[1] == PRODUCT_ROUTE_NAME:
-#     # Đây là nơi bạn sẽ gọi mô hình LLM của mình
-#         response = chain.invoke({'question': message})['answer']
-#         history.append((message, response))
-
-#     else:
-#         prompt = [
-#             (
-#                 "system",
-#                 """Bạn là 1 chuyên gia trong lĩnh vực trò chuyện, tâm sự với con người. Hãy trò chuyện cùng họ và cố gắng làm hài lòng họ nhất có thể.
-#                 Nếu làm tốt bạn sẽ nhận được 10000$""",
-#             ),
-#             ("human", message),
-#         ]
-#         response = APP_CFG.load_groq_model().invoke(prompt)
-#         history.append((message, response))
-#     return "", history
-
 def reset_conversation():
-    return [], []
+    # Thêm tin nhắn chào hỏi vào đây
+    return [("", "Xin chào! 😊 Em là Bot VCC, trợ lý mua săm tại VCC sẵn sàng tư vấn cho anh/chị về các sản phẩm bên em. Rất vui được hỗ trợ anh/chị hôm nay! Chúc anh/chị một ngày tuyệt vời! 😊")], []
 
 with gr.Blocks(css="""
     #chatbot { 
@@ -84,7 +61,7 @@ with gr.Blocks(css="""
     """)
     
     chatbot = gr.Chatbot(
-        [],
+        [("", "Xin chào! 😊 Em là Bot VCC, trợ lý mua săm tại VCC sẵn sàng tư vấn cho anh/chị về các sản phẩm bên em. Rất vui được hỗ trợ anh/chị hôm nay! Chúc anh/chị một ngày tuyệt vời! 😊")],
         elem_id="chatbot",
         bubble_full_width=False,
         avatar_images=("images/avt_vcc.png", "images/avt_bot.png"),
