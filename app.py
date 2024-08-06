@@ -1,12 +1,31 @@
 import gradio as gr
-from source.main import chain
+from configs.load_config import LoadConfig
+from source.chat import chat_with_history
+APP_CFG = LoadConfig()
 
 
-def chat_response(message, history):
-    # Đây là nơi bạn sẽ gọi mô hình LLM của mình
-    response = chain.invoke({'question': message})['answer']
-    history.append((message, response))
-    return "", history
+# def chat_response(message, history):
+
+#     guidedRoute = semanticRouter.guide(message)
+#     print(guidedRoute)
+
+#     if guidedRoute[1] == PRODUCT_ROUTE_NAME:
+#     # Đây là nơi bạn sẽ gọi mô hình LLM của mình
+#         response = chain.invoke({'question': message})['answer']
+#         history.append((message, response))
+
+#     else:
+#         prompt = [
+#             (
+#                 "system",
+#                 """Bạn là 1 chuyên gia trong lĩnh vực trò chuyện, tâm sự với con người. Hãy trò chuyện cùng họ và cố gắng làm hài lòng họ nhất có thể.
+#                 Nếu làm tốt bạn sẽ nhận được 10000$""",
+#             ),
+#             ("human", message),
+#         ]
+#         response = APP_CFG.load_groq_model().invoke(prompt)
+#         history.append((message, response))
+#     return "", history
 
 def reset_conversation():
     return [], []
@@ -39,8 +58,8 @@ with gr.Blocks(css="""
     #chat-header {
         text-align: center;
         padding: 20px;
-        background-color: #FF1493;
-        color: white;
+        background-color: #ADD8E6;
+        color: black;
         border-radius: 15px 15px 0 0;
         margin-bottom: 20px;
     }
@@ -59,8 +78,8 @@ with gr.Blocks(css="""
 """) as demo:
     gr.HTML("""
     <div id="chat-header">
-        <h1>💬 Chat với AI Assistant</h1>
-        <p>Hãy đặt câu hỏi, tôi sẽ cố gắng trả lời bạn!</p>
+        <h1 style="color: #000000">💬 Chat với AI Assistant</h1>
+        <p style="color: #000000">Hãy đặt câu hỏi, tôi sẽ cố gắng trả lời bạn!</p>
     </div>
     """)
     
@@ -79,8 +98,8 @@ with gr.Blocks(css="""
         )
         submit_btn = gr.Button("Gửi", elem_id="send-btn")
     
-    txt.submit(chat_response, [txt, chatbot], [txt, chatbot])
-    submit_btn.click(chat_response, [txt, chatbot], [txt, chatbot])
+    txt.submit(chat_with_history, [txt, chatbot], [txt, chatbot])
+    submit_btn.click(chat_with_history, [txt, chatbot], [txt, chatbot])
 
     with gr.Row(elem_classes="button-row"):
         clear = gr.Button("Xóa tin nhắn", elem_id="clear-btn")
