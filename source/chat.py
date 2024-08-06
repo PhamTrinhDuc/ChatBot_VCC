@@ -12,7 +12,7 @@ def get_history():
     return history['chat_history']
 
 def rewrite_query(query: str, history: str) -> str: 
-    query_rewrite = llm.invoke(PROMPT_HISTORY.format(question=query, chat_history=history))
+    query_rewrite = llm.invoke(PROMPT_HISTORY.format(question=query, chat_history=history)).content
     return query_rewrite
 
 # def chat_with_history(query: str, history):
@@ -52,24 +52,23 @@ def rewrite_query(query: str, history: str) -> str:
 
 #     return "", history
 
-def chat_with_history(query: str):
-    context = get_context(query=query)
+def chat_with_history(query: str, history):
     history_conversation = get_history()
-    print(history_conversation)
-    print("=" * 100)
     query_rewrite = rewrite_query(query=query, history=history_conversation)
-    print(rewrite_query)
-    print("=" * 100)
+    context = get_context(query=query_rewrite)
+    print(context)
     prompt_final = PROMPT_HEADER.format(question=query_rewrite, context=context)
 
     response = llm.invoke(prompt_final).content
 
-    memory.chat_memory.add_user_message(prompt_final)
+    memory.chat_memory.add_user_message(query)
     memory.chat_memory.add_ai_message(response)
 
-    return response
+    history.append((query, response))
+
+    return "", history
 
 
 
-response = chat_with_history(query="Tôi muốn mua điều hòa")
-print(response)
+# response = chat_with_history(query="Tôi muốn mua điều hòa")
+# print(response)
