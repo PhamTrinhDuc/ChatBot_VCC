@@ -1,10 +1,11 @@
 directories:
   persist_vector_directory: data/vector_db
-  data_product_directory: data/data_csv/product_csv.csv
-  database_product_directory: data/database/product.db
-
+  csv_product_directory: data/data_csv
+  text_product_directory: data/data_text
+  
 llm_config:
   rag_model: Llama3-70b-8192
+  chatchit_model: Mixtral-8x7b-32768
   temperature: 0.0
   max_token: 1024
 
@@ -12,9 +13,38 @@ retriever_config:
   similarity_score: 0.5
   embedding_model: BAAI/bge-base-en-v1.5
   vector_embed_size: 768
-  top_k: 3
+  top_k: 5
   score_thres: 0.7
 
 chunk_config:
   chunk_size: 1248
   chunk_overlap: 200
+
+product:
+  id_2_name: {
+    1: "ban_la",
+    2: "bep_tu",
+    3: "binh_dun_nuoc",
+    4: "binh_nuoc_nong",
+    5: "cong_tac",
+    6: "dieu_hoa",
+    7: "dnlmt",
+    8: "ghe_massage",
+    9: "lo_vi_song",
+    10: "may_giat",
+    11: "may_loc_kk",
+    12: "may_loc_nuoc",
+    13: "may_say_quan_ao",
+    14: "may_say_toc",
+    15: "may_xay",
+    16: "noi_ap_suat",
+    17: "noi_chien_kh_dau",
+    18: "noi_com_dien",
+    19: "robot_hut_bui",
+    20: "thiet_bi_camera",
+    21: "thiet_bi_gia_dung",
+    22: "thiet_bi_webcam",
+    23: "thiet_bi_wifi",
+    0: "LLM",
+    -1: "products"
+}
