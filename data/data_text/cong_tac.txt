@@ -1,0 +1,36 @@
+Sản phẩm: Công tắc cảm ứng 1 nút chữ nhật - 2 dây màu trắng có ID là: 628018, mã sản phẩm(mã Code) là: SMCTC000044, thông tin chi tiết về sản phẩm: Công tắc cảm ứng 1 nút chữ nhật - 2 dây màu trắng: THÔNG SỐ KỸ THUẬT 
+    • Điện áp hoạt động: 100-250V / 50-60Hz 
+    • Nhiệt độ hoạt động: 0oC ~ 65oC 
+    • Công suất chịu tải tối đa: ≤ 700 W/Line 
+    • Chuẩn kết nối Zigbee 
+    • Khoảng cách điều khiển tối đa: 15-20m (tùy thuộc địa hình lắp đặt)
+giá: 1063000, số lượng: Công tắc cảm ứng 1 nút chữ nhật - 2 dây màu trắng đã bán là: 12, sản phẩm: Công tắc cảm ứng 1 nút chữ nhật - 2 dây màu trắng có giá:1063000
+Sản phẩm: Công tắc cảm ứng 2 nút chữ nhật - 2 dây màu trắng có ID là: 628019, mã sản phẩm(mã Code) là: SMCTC000045, thông tin chi tiết về sản phẩm: Công tắc cảm ứng 2 nút chữ nhật - 2 dây màu trắng: THÔNG SỐ KỸ THUẬT 
+    • Điện áp hoạt động: 100-250V / 50-60Hz 
+    • Nhiệt độ hoạt động: 0oC ~ 65oC 
+    • Công suất chịu tải tối đa: ≤ 700 W/Line 
+    • Chuẩn kết nối: Zigbee 
+    • Khoảng cách điều khiển tối đa: 15-20m (tùy thuộc địa hình lắp đặt)
+giá: 1106000, số lượng: Công tắc cảm ứng 2 nút chữ nhật - 2 dây màu trắng đã bán là: 8, sản phẩm: Công tắc cảm ứng 2 nút chữ nhật - 2 dây màu trắng có giá:1106000
+Sản phẩm: Công tắc cảm ứng 3 nút chữ nhật - 2 dây màu trắng có ID là: 628020, mã sản phẩm(mã Code) là: SMCTC000046, thông tin chi tiết về sản phẩm: Công tắc cảm ứng 3 nút chữ nhật - 2 dây màu trắng: THÔNG SỐ KỸ THUẬT 
+    • Điện áp hoạt động: 100-250V / 50-60Hz 
+    • Nhiệt độ hoạt động: 0oC ~ 65oC 
+    • Công suất chịu tải tối đa: ≤ 700 W/Line 
+    • Chuẩn kết nối: Zigbee 
+    • Khoảng cách điều khiển tối đa: 15-20m (tùy thuộc địa hình lắp đặt)
+giá: 1169000, số lượng: Công tắc cảm ứng 3 nút chữ nhật - 2 dây màu trắng đã bán là: 12, sản phẩm: Công tắc cảm ứng 3 nút chữ nhật - 2 dây màu trắng có giá:1169000
+Sản phẩm: Công tắc cảm ứng 4 nút chữ nhật - 2 dây màu trắng có ID là: 628021, mã sản phẩm(mã Code) là: SMCTC000047, thông tin chi tiết về sản phẩm: Công tắc cảm ứng 4 nút chữ nhật - 2 dây màu trắng: THÔNG SỐ KỸ THUẬT 
+    • Điện áp hoạt động: 100-250V / 50-60Hz 
+    • Nhiệt độ hoạt động: 0oC ~ 65oC 
+    • Công suất chịu tải tối đa: ≤ 700 W/Line 
+    • Chuẩn kết nối : Zigbee 
+    • Khoảng cách điều khiển tối đa : 15-20m (tùy thuộc địa hình lắp đặt)
+giá: 1254000, số lượng: Công tắc cảm ứng 4 nút chữ nhật - 2 dây màu trắng đã bán là: 8, sản phẩm: Công tắc cảm ứng 4 nút chữ nhật - 2 dây màu trắng có giá:1254000
+Sản phẩm: Bộ điều khiển trung tâm Home Controller (HC) có ID là: 628014, mã sản phẩm(mã Code) là: SMBDK000011, thông tin chi tiết về sản phẩm: Bộ điều khiển trung tâm Home Controller (HC): THÔNG SỐ KỸ THUẬT 
+Điện áp hoạt động: 12VDC – 0.5A 
+Nhiệt độ hoạt động: 0oC ~ 50oC 
+Độ ẩm hoạt động: 0 – 95% 
+Chuẩn kết nối: Zigbee 
+Kích thước (DxRxC): 120 x 80 x 24 mm 
+Bảo hành: 24 tháng
+giá: 2277000, số lượng: Bộ điều khiển trung tâm Home Controller (HC) đã bán là: 6, sản phẩm: Bộ điều khiển trung tâm Home Controller (HC) có giá:2277000
