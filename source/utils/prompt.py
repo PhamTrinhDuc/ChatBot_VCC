@@ -120,15 +120,12 @@ HƯỚNG DẪN CHI TIẾT:
         • Nếu câu hỏi không liên quan đến lịch sử: Giữ nguyên câu hỏi hoặc chỉnh sửa nhẹ để làm rõ ý.
     4. Định dạng câu trả lời:
         • Sử dụng tiếng Việt cho toàn bộ câu trả lời.
-        • Cấu trúc câu trả lời như sau: 
-            rewrite: [Câu hỏi sau khi được chỉnh sửa hoặc làm rõ]
-
-        Ví dụ: 
-        question: tôi muốn mua điều hòa
-        rewrite: tôi cần mua điều hòa, hãy tư vấn cho tôi.
+        • Cấu trúc câu trả lời là 1 dictionary có: 
+            key: rewrite
+            value: Câu hỏi sau khi được chỉnh sửa hoặc làm rõ
 
 LƯU Ý QUAN TRỌNG:
-    • Luôn ưu tiên độ chính xác của thông tin.
+    • Luôn ưu tiên độ chính xác của thông tin, câu hỏi viết lại ngắn gọn.
     • Giữ giọng điệu lịch sự, chuyên nghiệp và hữu ích trong suốt quá trình trã lời.
     • Câu trả lời đúng định dạng
 
@@ -139,3 +136,47 @@ LƯU Ý QUAN TRỌNG:
     Câu hỏi của người dùng: 
     {question}
     """
+
+
+PROMPT_CLF_PRODUCT = '''
+    Bạn là 1 chuyên gia trong lĩnh vực phân loại câu hỏi của người dùng. Nhiệm vụ của bạn là phân loại câu hỏi của người dùng, dưới đây là các nhãn:
+    bàn là, bàn ủi: 1
+    bếp từ, bếp từ đôi, bếp từ đôi: 2
+    ấm đun nước, bình nước nóng: 3
+    bình nước nóng, máy năng lượng mặt trời: 4
+    công tắc, ổ cắm thông minh, bộ điều khiển thông minh: 5
+    điều hòa, điều hòa daikin, điêu hòa carrier: 6
+    đèn năng lượng mặt trời, đèn trụ cổng, đèn nlmt rời thể , đèn nlmt đĩa bay, bộ đèn led nlmt, đèn đường nlmt, đèn bàn chải nlmt, đèn sân vườn nlmt: 5
+    ghế massage: 8
+    lò vi sóng, lò nướng, nồi lẩu: 9
+    máy giặt: 10
+    máy lọc không khí, máy hút bụi: 11
+    máy lọc nước: 12
+    Máy sấy quần áo: 13
+    Máy sấy tóc: 14
+    máy xay, máy làm sữa hạt, máy ép: 15
+    nồi áp suất: 16
+    nồi chiên không dầu KALITE, Rapido: 17
+    nồi cơm điện : 18
+    robot hút bụi: 19
+    thiết bị camera, camera ngoài trời: 20
+    thiết bị gia dung, nồi thủy tinh, máy ép chậm kalite, quạt sưởi không khí, tủ mát aqua, quạt điều hòa, máy làm sữa hạt: 21
+    thiết bị webcam, bluetooth mic và loa: 22
+    wifi, thiết bị định tuyến: 23
+    Nếu không tìm được số phù hợp, trả về : 0
+    Nếu tìm được 2 nhãn trở lên, trả về  : -1
+
+    Trả ra output là số tương ứng với một hoặc nhiều nhãn được phân loại:
+    Ví dụ: 
+        input: nồi áp suất nào rẻ nhất
+        output: 16
+
+        input: Tôi muốn mua máy sấy tóc và máy lọc nước
+        output: -1
+
+        input: Trời đẹp quá
+        output: 0
+        
+    input: {query}
+    output: 
+    '''
