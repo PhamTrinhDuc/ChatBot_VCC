@@ -70,7 +70,6 @@ class LoadConfig:
         """
         rag_model = ChatGroq(
                 model=self.rag_model,
-                api_key=os.getenv("GROQ_API_KEY"),
                 temperature=self.temperature,
                 max_tokens=self.max_token,
                 verbose=True,
@@ -80,7 +79,6 @@ class LoadConfig:
     def load_chatchit_model(self) -> ChatGroq:
         chatchit_model = ChatGroq(
             model=self.chatchit_model,
-                api_key=os.getenv("GROQ_API_KEY"),
                 temperature=self.temperature,
                 max_tokens=self.max_token,
                 verbose=True,
@@ -90,7 +88,6 @@ class LoadConfig:
     def load_openai_model(self) -> ChatOpenAI:
         langchain_openai = ChatOpenAI(
             model='gpt-4o-mini',
-            api_key=os.getenv("OPENAI_API_KEY"),
             temperature=self.temperature,
             max_tokens=self.max_token,
             verbose=True,
