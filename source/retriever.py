@@ -17,6 +17,12 @@ dotenv.load_dotenv()
 
 
 def get_tool(query: str):
+    """
+    Arg:
+        query: Câu truy vấn của người dùng. Sử dụng LLM để phân loại câu hỏi thuộc về sản phẩm nào.
+    Return:
+        danh sách id của sản phẩm
+    """
     prompt = PROMPT_CLF_PRODUCT.format(query=query)
     llm = APP_CONFIG.load_openai_model()
     output = llm.invoke(prompt).content
