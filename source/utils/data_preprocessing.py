@@ -38,3 +38,7 @@ def convert_csv_to_txt():
         data_text = csv2txt(csv_path)
         with open(txt_path, "w", encoding='utf-8') as file:
             file.write(data_text)
+
+# def chunking_data(file_data: str):
+#     with open(file_data, 'r', encoding='utf-8') as file:
+#         content = file.read()
