@@ -69,7 +69,6 @@ def get_context(query: str):
     number = np.unique(get_tool(query=query))
 
     print(number)
-    # print(number)
     # print(APP_CONFIG.id_2_name[number[0]])
 
     data_chunked, db = None, None
@@ -84,4 +83,7 @@ def get_context(query: str):
     retriever = init_retriever(vector_db=db, data_chunked=data_chunked)
     contents = retriever.invoke(input=query)
 
-    return contents
+    final_contents = ""
+    for content in contents: 
+        final_contents = final_contents + content.page_content if content.metadata['relevance_score'] > 0.5 else final_contents + ""
+    return final_contents
