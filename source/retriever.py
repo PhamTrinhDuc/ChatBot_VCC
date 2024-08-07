@@ -7,6 +7,7 @@ from langchain_cohere import CohereRerank
 from configs.load_config import LoadConfig
 from source.load_db import create_sub_db, create_db
 from source.utils.prompt import PROMPT_CLF_PRODUCT
+from source.utils.base_model import GradeID
 import dotenv
 import os
 import numpy as np
@@ -24,12 +25,12 @@ def get_tool(query: str):
         danh sách id của sản phẩm
     """
     prompt = PROMPT_CLF_PRODUCT.format(query=query)
-    llm = APP_CONFIG.load_openai_model()
-    output = llm.invoke(prompt).content
-    # print(output)
-    pattern = r'-?\d+(?:\.\d+)?'
-    numbers = re.findall(pattern, output)
-    return [int(num) for num in numbers]
+    llm = APP_CONFIG.load_chatchit_model().with_structured_output(GradeID)
+    output = llm.invoke(prompt)
+    return output.ID
+    # pattern = r'-?\d+(?:\.\d+)?'
+    # numbers = re.findall(pattern, str(output))
+    # return [int(num) for num in numbers]
 
 
 def init_retriever(vector_db: Chroma, data_chunked: RecursiveCharacterTextSplitter | CharacterTextSplitter):
