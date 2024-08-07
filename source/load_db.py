@@ -1,17 +1,19 @@
 import os
 from langchain.text_splitter import RecursiveCharacterTextSplitter, CharacterTextSplitter
 from langchain_community.vectorstores import Chroma
+from langchain_core.documents import Document
 from configs.load_config import LoadConfig
 from source.utils.data_preprocessing import convert_csv_to_txt
-CFG_APP = LoadConfig()
 
+
+CFG_APP = LoadConfig()
 
 # chuyển file csv sang file text
 if len(os.listdir(CFG_APP.text_product_directory)) == 0:
     convert_csv_to_txt()
 
 
-def split_sub_file(data_path):
+def split_sub_file(data_path: str) -> Document:
     with open(data_path, 'r', encoding='utf-8') as file:
         content = file.read()
 
@@ -22,7 +24,7 @@ def split_sub_file(data_path):
     ).split_text(content)
     return data_chunked
 
-def split_file(data_path):
+def split_file(data_path: str) -> Document:
     with open(data_path, 'r', encoding='utf-8') as file:
         content = file.read()
 
