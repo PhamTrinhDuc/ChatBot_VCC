@@ -19,7 +19,7 @@ def split_sub_file(data_path: str) -> Document:
 
     data_chunked = CharacterTextSplitter(
         separator="\n",
-        chunk_size=500,
+        chunk_size=512,
         chunk_overlap=50
     ).split_text(content)
     return data_chunked
