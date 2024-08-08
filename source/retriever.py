@@ -1,9 +1,9 @@
 
-from langchain_community.retrievers import BM25Retriever
 from langchain.text_splitter import RecursiveCharacterTextSplitter, CharacterTextSplitter
 from langchain_community.vectorstores import Chroma
 from langchain.retrievers import EnsembleRetriever, ContextualCompressionRetriever
 from langchain_cohere import CohereRerank
+from langchain_community.retrievers import BM25Retriever
 from configs.load_config import LoadConfig
 from source.load_db import create_sub_db, create_db
 from source.utils.prompt import PROMPT_CLF_PRODUCT
@@ -11,7 +11,6 @@ from source.utils.base_model import GradeID
 import dotenv
 import os
 import numpy as np
-import re
 
 APP_CONFIG = LoadConfig()
 dotenv.load_dotenv()
@@ -25,7 +24,7 @@ def get_tool(query: str):
         danh sách id của sản phẩm
     """
     prompt = PROMPT_CLF_PRODUCT.format(query=query)
-    llm = APP_CONFIG.load_chatchit_model().with_structured_output(GradeID)
+    llm = APP_CONFIG.load_openai_model().with_structured_output(GradeID)
     output = llm.invoke(prompt)
     return output.ID
     # pattern = r'-?\d+(?:\.\d+)?'
@@ -54,15 +53,14 @@ def init_retriever(vector_db: Chroma, data_chunked: RecursiveCharacterTextSplitt
     
     # initialize the ensemble retriever with 3 Retrievers
     ensemble_retriever = EnsembleRetriever(
-        retrievers=[retriever_vanilla, retriever_mmr, retriever_BM25], weights=[0.3, 0.3, 0.4]
-)
+        retrievers=[retriever_vanilla, retriever_mmr, retriever_BM25], weights=[0.3, 0.3, 0.4])
     # rerank with cohere
-    compressor = CohereRerank(cohere_api_key=os.getenv("COHERE_API_KEY"))
-    compression_retriever = ContextualCompressionRetriever(
-        base_compressor=compressor, 
-        base_retriever=ensemble_retriever
-    )
-    return compression_retriever
+    # compressor = CohereRerank(cohere_api_key=os.getenv("COHERE_API_KEY"), top_n=APP_CONFIG.top_k)
+    # compression_retriever = ContextualCompressionRetriever(
+    #     base_compressor=compressor, 
+    #     base_retriever=ensemble_retriever
+    # )
+    return ensemble_retriever
 
 
 def get_context(query: str):
@@ -90,7 +88,5 @@ def get_context(query: str):
     retriever = init_retriever(vector_db=db, data_chunked=data_chunked)
     contents = retriever.invoke(input=query)
 
-    final_contents = ""
-    for content in contents: 
-        final_contents = final_contents + content.page_content if content.metadata['relevance_score'] > 0.5 else final_contents + ""
+    final_contents = "\n\n".join(doc.page_content for doc in contents)
     return final_contents
