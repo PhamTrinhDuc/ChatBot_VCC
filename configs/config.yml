@@ -5,12 +5,12 @@ directories:
   
 llm_config:
   rag_model: Llama3-70b-8192
-  chatchit_model: Mixtral-8x7b-32768
-  temperature: 0.0
+  chatchit_model: mixtral-8x7b-32768
+  temperature_rag: 0.0
+  temperature_chat: 1.0
   max_token: 1024
 
 retriever_config:
-  similarity_score: 0.5
   embedding_model: BAAI/bge-base-en-v1.5
   vector_embed_size: 768
   top_k: 5
