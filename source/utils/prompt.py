@@ -47,17 +47,12 @@ Nếu phần thông tin không liên quan thì không dùng.
     Question: {question}
     =================
     Context: {context}
-    =================
-    Answer in Markdown:
 """
 
 PROMPT_HISTORY = """
-NHIỆM VỤ: Phân tích lịch sử trò chuyện kết hợp với câu hỏi của người dùng viết lại 1 câu hỏi mới hoàn chỉnh hơn.
-MỤC TIÊU: câu hỏi viết lại cần ngắn gọn, không lan man rườm rà và tập trung chính vào sản phẩm.
-
-LƯU Ý QUAN TRỌNG:
-    • Luôn ưu tiên độ chính xác của thông tin, câu hỏi viết lại ngắn gọn.
-    • Chỉ cần đưa ra câu viết hỏi được viết lại.
+NHIỆM VỤ: Tưởng tượng bạn là người mua hàng, hãy sử dụng câu hỏi và lịch sử (nếu cần thiết) để viết lại câu hỏi mới.
+MỤC TIÊU: câu hỏi viết lại cần ngắn gọn, không lan man rườm rà và tập trung chính vào sản phẩm và ý định của người mua hàng.
+LƯU Ý: chỉ sử dụng tiếng việt để trả lời và không được tự ý đưa thêm thông tin vào câu hỏi.
 
     ===================
     Lịch sử cuộc trò chuyện:
