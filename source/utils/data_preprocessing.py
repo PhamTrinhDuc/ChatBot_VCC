@@ -1,11 +1,13 @@
 import os
 import csv
 from configs.load_config import LoadConfig
+from langchain_core.documents import Document
 
 APP_CFG = LoadConfig()
 
 def csv2txt(csv_link):
-    data_text = ''
+    data_text = []
+    data_text = ""
     with open(csv_link, encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
@@ -18,7 +20,8 @@ def csv2txt(csv_link):
             RAW_PRICE = row['RAW_PRICE']
             # In ra văn bản theo định dạng mong muốn
             s = f"Sản phẩm: {PRODUCT_NAME} có ID là: {PRODUCT_INFO_ID}, mã sản phẩm(mã Code) là: {PRODUCT_CODE}, thông tin chi tiết về sản phẩm: {PRODUCT_NAME}: {SPECIFICATION_BACKUP}, số lượng: {PRODUCT_NAME} đã bán là: {QUANTITY_SOLD}, sản phẩm: {PRODUCT_NAME} có giá:{RAW_PRICE}\n"
-            data_text = data_text + s
+            # data_text = data_text + s
+            data_text.append(Document(s))
             # print(s)
     return data_text
 
